@@ -37,7 +37,7 @@ const WhoWeAre = ({ props }) => {
                   <li>Transparency</li>
                 </ul>
                 <Link href="">
-                  <button className="btns btns-primary">
+                  <button className="btns btns-white-outline">
                     <span>know More</span>
                     <span className="arrow"></span>
                   </button>

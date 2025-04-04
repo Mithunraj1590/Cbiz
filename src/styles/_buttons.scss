@@ -135,3 +135,45 @@ $fourth-color: #EB2227 !default;
     }
   }
 }
+
+.btns-white-outline{
+  border: 1px solid #fff;
+  height: 55px;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: #fff;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  max-width: max-content;
+  padding: 25px 40px;
+  .arrow{
+    display: inline-block;
+    position: relative;
+   margin-left: 25px;
+   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: -0.3rem;
+        right: 0.0625rem;
+        width: 0.625rem;
+        height: 0.625rem;
+        border-top: 0.2rem solid #fff;
+        border-right: 0.2rem solid #fff;
+        transform: rotate(45deg);
+        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+
+    }
+  }
+  &:hover{
+    background-color: #fff;
+    color: #000;
+    .arrow{
+        transform: translate(8px, 0);
+        &::before{
+            border-top: 0.2rem solid #000;
+            border-right: 0.2rem solid #000;
+        }
+    }
+  }
+}

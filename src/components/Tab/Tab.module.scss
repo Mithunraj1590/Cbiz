@@ -27,7 +27,7 @@
           }
           &.active{
             color: #fff;
-            background-color: var(--primary);
+            background-color: $primary-color;
             border-radius: 44px;
             svg{
               path{

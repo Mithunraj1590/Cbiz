@@ -1,0 +1,45 @@
+@import "@/styles/mixins";
+
+.tabs{
+    .tabList{
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        border-radius: 58px;
+        padding: 4px;
+        border: 1px solid #DDDDDD;
+        .tabButton{
+          width: 48%;
+          font-size: 16px;
+          background-color: transparent;
+          border: none;
+          padding: 9px 30px;
+          font-family: var(--font-apercu-regular), monospace;
+          display: flex;
+          align-items: center;
+          color: #000;
+          svg{
+            margin-right: 10px;
+            path{
+              fill: var(--primary);
+              stroke: var(--primary);
+            }
+          }
+          &.active{
+            color: #fff;
+            background-color: var(--primary);
+            border-radius: 44px;
+            svg{
+              path{
+                fill: #fff;
+                stroke: #fff;
+              }
+            }
+          }
+        }
+        margin-bottom: 16px;
+    }
+    .tabContent{
+
+    }
+}

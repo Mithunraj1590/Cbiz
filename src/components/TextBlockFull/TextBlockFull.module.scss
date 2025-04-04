@@ -1,0 +1,47 @@
+@import "@/styles/mixins";
+
+.got_block {
+    background: #F6F2EB;
+    border-radius: 10px;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    .title{
+        margin-bottom: 14px;
+    }
+    @include max(1024){
+        margin-bottom: 16px;
+    }
+}
+
+.got_block_01 {
+    width: 75%;
+    width: calc(100% - 248px);
+    padding: 20px 0;
+
+    p {
+        max-width: 75%;
+
+        @include max(700) {
+            max-width: 100%;
+        }
+
+    }
+
+    @include max(1024) {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.got_block_02 {
+    width: fit-content;
+
+    @include max(700) {
+        width: auto;
+    }
+
+}

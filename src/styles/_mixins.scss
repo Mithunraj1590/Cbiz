@@ -1,0 +1,120 @@
+$base-size:16;
+
+$primary-color:  #013346!default; 
+$secondary-color: #29B574 !default;
+$third-color: #F39321 !default;
+$fourth-color: #EB2227 !default;
+// Custom-color
+$dark-bg: #20222E !default;
+$dark-gray: #323241 !default;
+$light-bg: #EDF1F7 !default;
+$text-color: #000 !default;
+$title-color: #1D1D1D !default;
+$hover :$primary-color;
+$border-color: #E6E6E6 !default;
+$text-alt: #282828 !default;
+$text-off: #281107 !default;
+$white-color: #fff !default;
+$black: #000 !default;
+$red: #C60C02 !default;
+
+// Media Queries
+@mixin min($breakpoint, $property: width) {
+  @media screen and (min-#{$property}: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin max($breakpoint, $property: width) {
+  @media screen and (max-#{$property}: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin min-max($bp-min, $bp-max, $prop-min: width, $prop-max: $prop-min) {
+  @media screen and (min-#{$prop-min}: #{$bp-min}px) and (max-#{$prop-max}: #{$bp-max}px) {
+    @content;
+  }
+}
+
+@mixin touchDevices {
+  @media (hover: none) {
+    @content;
+  }
+}
+
+@mixin noTouchDevices {
+  @media (hover: hover) {
+    @content;
+  }
+}
+
+// Line Height
+@mixin lineHeight($font, $line) {
+  line-height: calc($line/$font);
+}
+
+// Line Clamp
+@mixin lineClamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Aspect Ratio
+@mixin aspectRatio($w, $h) {
+  position: relative;
+
+  img,
+  video,
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 100%;
+    padding-bottom: calc(($h / $w) * 100%);
+  }
+}
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}
+
+@mixin min-max($resMin, $resMax) {
+  @media (min-width: $resMin+px) and (max-width: $resMax+px) {
+    @content;
+  }
+}
+
+@mixin max($res) {
+  @media (max-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin min($res) {
+  @media (min-width: $res+px) {
+    @content;
+  }
+}
+
+@mixin lineHeight($font, $line) {
+  line-height: calc($line/$font);
+}
+
+@function size($target, $context: $base-size) {
+  @return ($target / $context) * 1rem;
+}

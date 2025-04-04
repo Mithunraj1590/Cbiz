@@ -1,0 +1,203 @@
+
+
+// Bootstrap scss-docs-start import-stack
+@import "~bootstrap/scss/mixins/banner";
+@include bsBanner("");
+// Configuration
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+
+
+// Layout & components
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+// @import "~bootstrap/scss/images";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+// @import "~bootstrap/scss/button-group";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+// @import "~bootstrap/scss/card";
+@import "~bootstrap/scss/accordion";
+@import "~bootstrap/scss/breadcrumb";
+// @import "~bootstrap/scss/pagination";
+// @import "~bootstrap/scss/badge";
+// @import "~bootstrap/scss/alert";
+// @import "~bootstrap/scss/progress";
+// @import "~bootstrap/scss/list-group";
+@import "~bootstrap/scss/close";
+// @import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
+// @import "~bootstrap/scss/tooltip";
+// @import "~bootstrap/scss/popover";
+// @import "~bootstrap/scss/carousel";
+// @import "~bootstrap/scss/spinners";
+@import "~bootstrap/scss/offcanvas";
+// @import "~bootstrap/scss/placeholders";
+
+// Helpers
+@import "~bootstrap/scss/helpers";
+
+// Utilities
+@import "~bootstrap/scss/utilities/api";
+// Bootstrap scss-docs-end import-stack
+@import "./root_mixins";
+@import "./mixins";
+@import "./buttons";
+
+$base-size:16;
+
+$primary-color:  #013346!default; 
+$secondary-color: #29B574 !default;
+$third-color: #F39321 !default;
+$fourth-color: #EB2227 !default;
+// Custom-color
+$dark-bg: #20222E !default;
+$dark-gray: #323241 !default;
+$light-bg: #EDF1F7 !default;
+$text-color: #000 !default;
+$title-color: #1D1D1D !default;
+$hover :$primary-color;
+$border-color: #E6E6E6 !default;
+$text-alt: #282828 !default;
+$text-off: #281107 !default;
+$white: #fff !default;
+$black: #000 !default;
+$red: #C60C02 !default;
+
+:root {
+    --primary:#fff;
+    --btn-primary:#074173;
+    --mid-gray: #4c4a46;
+    --dark-gray: #21201f;
+    --white:#fff; 
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+body{
+    background-color:  var( --primary);
+    font-family: var(--font-primary);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  margin: 0;
+  line-height: 100%;
+  font-weight: 700;
+  color: #080808;
+}
+
+p {
+  color: #080808;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.container{
+    position: relative;
+}
+
+html.lenis {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  .animated-title{
+    line-height: 1;
+    span{
+        display: block;
+    }
+  }
+
+  .title {
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: 400;
+    line-height: 38px;
+    font-family: var(--ff-secondary);
+    @include min(992) {
+      margin-bottom: size(20);
+      line-height: 1.2;
+    }
+    @include min(1200) {
+      line-height: 1.25;
+    }
+   
+    strong {
+      display: block;
+    }
+    @include min(576){
+      
+    }
+    &.inline {
+      strong {
+        display: unset;
+      }
+    }
+    span{
+      line-height: 1.2;
+    }
+  }

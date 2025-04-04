@@ -1,0 +1,76 @@
+@import "@/styles/mixins";
+// .welcome_logo {
+//    max-width: 258px;
+//    @include aspectRatio(258 , 34.86);
+//    margin-top: 60px;
+//    border-radius: 20px;
+//    overflow: hidden
+// }
+
+.home_room_type {
+   padding-bottom: 100px;
+   @include max(1024){
+      padding-bottom: 50px;
+   }
+   @include max(600) {
+      padding: 50px 0;
+      padding-top: 0;
+   }
+}
+
+.room_img_block {
+   width: 64.7%;
+   border-radius: 10px;
+   overflow: hidden;
+   @include max(700) {
+      width: 100%;
+      margin-bottom: 10px;
+   }
+}
+
+.room_img_block_figure {
+   @include aspectRatio(819, 380);
+}
+
+.room_txt_block {
+   width: 34.2%;
+   background: #f6f2eb;
+   border-radius: 10px;
+   padding: 3.5%;
+
+   @include max(700) {
+      width: 100%;
+      margin-bottom: 10px;
+   }
+}
+
+.room_txt_block {
+   width: 34.2%;
+   background: #f6f2eb;
+   border-radius: 10px;
+   padding: 3.5%;
+}
+
+.home_room_ul {
+   margin: 0;
+   padding: 0;
+   li {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+   }
+   .dk {
+      @include max(1024) {
+         display: none;
+      }
+      & > :nth-child(even) {
+         flex-direction: row-reverse;
+      }
+   }
+   .sm {
+      display: none;
+      @include max(1024) {
+         display: block;
+      }
+   }
+}

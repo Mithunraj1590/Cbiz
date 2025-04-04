@@ -1,0 +1,111 @@
+@import "@/styles/mixins";
+
+.accordion {
+    border: 1px solid rgba($color: #013346, $alpha: .7);
+    border-radius: 10px;
+    overflow: hidden;
+  
+  
+    .accordion_header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      padding: 22px 25px;
+      font-size: 1rem;
+      font-weight: 400;
+      background-color: #fff;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      border-radius: 10px;
+   
+      
+      &>div{
+        display: flex;
+        align-items: center;
+        
+        max-width: 90%;
+      }
+      @include max(1440){
+        padding: 20px 23px;
+      }
+      @include max(600){
+        padding: 15px;
+        font-size: 14px;
+        border-radius: 8px;
+      }
+  
+   
+  
+      .icon {
+        transition: transform 0.3s ease;
+      
+        svg{
+            transition: all .3s ease-in-out;
+             
+             @include max(600){
+              width: 20px!important;
+              height: 20px;
+
+             }
+            path{
+                transition: all .3s ease-in-out;
+                fill: #013346;
+                stroke:#013346;
+                
+            }
+        }
+      }
+    //   &:hover{
+    //     .icon{
+    //         svg{
+    //             transform: translateX(15px);
+    //         }
+    //     }
+    //   }
+  
+      .rotated {
+
+            svg{  
+              path{
+                fill: #231F20;
+                stroke: #231F20;
+              }
+            }
+        
+      }
+    }
+  
+    .accordion_content {
+      overflow: hidden;
+      transition: max-height 0.5s ease-in-out;
+      background-color: white;
+    }
+  
+    .accordion_body {
+      padding: 16px 25px;
+      max-width: 85%;
+      padding-bottom: 25px;
+      padding-top: 2px;
+      color: rgba($color: #000000, $alpha: .9);
+      font-family: var(--font-apercu-light), monospace;
+      font-weight: 300;
+      line-height: 23px;
+      font-size: 15px;
+      @include max(1024){
+        max-width: 100%;
+        font-size: 14px;
+      }
+    
+    }
+    &+.accordion{
+        margin-top: 15px;
+        @include max(600){
+          margin-top: 10px;
+        }
+    }
+  }
+  

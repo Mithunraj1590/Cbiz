@@ -1,0 +1,52 @@
+{
+  "homepage": {
+    "data": {
+      "seo": {
+        "id": 5,
+        "metaTitle": "Mithun raj",
+        "metaDescription": "This is my personal portfolio site",
+        "metaOgImage": "",
+        "keywords": null,
+        "metaRobots": null,
+        "structuredData": null,
+        "metaViewport": null,
+        "canonicalURL": null,
+        "metaImage": {
+          "url": {
+            "url": "https://admin.excelledia.webc.in/uploads/OG_IMAGE_1_61fccf82b8.png",
+            "alternativeText": null
+          },
+          "alternativeText": null
+        },
+        "metaSocial": []
+      },
+      "widgets": [
+        {
+          "widget_type": "HomeBanner",
+          "data":{
+              "title":"aaaa",
+              "image":"/images"
+          }
+        },
+        {
+          "widget_type": "HomeAbout",
+          "data":{
+
+          }
+        },
+        {
+          "widget_type":"HomeService",
+          "data":{
+
+          }
+        }
+       
+       
+       
+      ]
+    }
+  },
+  "work":{
+    "data":{}
+  }
+}

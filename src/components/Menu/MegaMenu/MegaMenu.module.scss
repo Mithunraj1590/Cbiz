@@ -1,0 +1,149 @@
+@import "@/styles/mixins";
+
+.megamenu {
+  background-color: #fff;
+  padding: size(30) size(30) size(30);
+  border-radius: size(10) size(10) size(13) size(13);
+  backdrop-filter: var(--backdrop-filter);
+  border: 1px solid rgba(0, 0, 0, 0.0901960784);
+  a {
+    color: #000;
+    text-decoration: none;
+    transition: 0.3s all ease-in-out;
+    &:hover {
+      color: #000;
+    }
+  }
+  &_row {
+    --bs-gutter-x: 2.2222222222rem;
+  }
+  &_tabs {
+    width: 312px;
+    max-width: 100%;
+    transition: 0.3s all ease-in-out;
+  }
+  &_results {
+    width: 412px;
+    max-width: 100%;
+    height: 100%;
+  }
+  .tab {
+    padding: size(15) size(25) size(15) size(15);
+    background-color: #fff;
+    margin-top: 10px;
+    border-radius: size(10);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+    transition: .2s background-color ease-in-out;
+    &:hover {
+      background-color: #fff;
+    }
+    
+    &_label {
+      flex-basis: calc(100% - size(45));
+      max-width: calc(100% - size(45));
+      p {
+        font-size: size(14);
+        color: #fff;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+    &_text {
+      font-size: size(16);
+      font-weight: 500;
+      color: #000;
+      font-family: var(--ff-secondary);
+    }
+    &_arrow {
+      flex-basis: size(45);
+      max-width: size(45);
+      padding-left: 10px;
+      text-align: right;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: all ease-in-out .3s ;
+    }
+
+    &.active {
+      background-color: #fff;
+
+      .tab_arrow {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+    &:hover{
+      .tab_arrow {
+        opacity: 1;
+        transform: translateX(0px);
+      }
+    }
+  }
+  .result {
+    margin-top: 10px;
+    height: calc(100% - 10px);
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: size(9);
+    overflow: hidden;
+    display: none;
+    &_head {
+      padding: size(27);
+      transition: 0.3s all ease-in-out;
+    }
+    &_title {
+      font-size: size(14);
+      transition: 0.3s all ease-in-out;
+    }
+    &_content {
+      font-size: size(16);
+      font-family: var(--ff-secondary);
+      font-weight: 500;
+      margin-top: size(12);
+      transition: 0.3s all ease-in-out;
+    }
+    &_image {
+      margin-top: auto;
+      position: relative;
+      > figure {
+        @include aspectRatio(412, 247);
+        overflow: hidden;
+        img {
+          object-fit: cover;
+          transform: scale(1.2);
+        }
+      }
+    }
+    &.show {
+      display: flex;
+      &.effect {
+        .result {
+          &_head {
+          }
+          &_title {
+          }
+          &_content {
+          }
+          &_image {
+            > figure {
+              img {
+                transform: scale(1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.megamenu_scrolled {
+  border-top-right-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border: 1px solid #00000017;
+}

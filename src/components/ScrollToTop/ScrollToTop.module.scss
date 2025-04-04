@@ -1,0 +1,27 @@
+.scroll_to_top {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 2px inset;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.3s ease all;
+  position: fixed;
+  z-index: 111;
+  background-color: #fff;
+  bottom: 50px;
+  right: 5%;
+  border: none;
+  border-radius: 100%;
+  span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+body {
+  &:global(.scroll-to-top-active) {
+    .scroll_to_top {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

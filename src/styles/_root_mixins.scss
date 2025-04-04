@@ -1,0 +1,60 @@
+@import "./util";
+@import "./mixins";
+
+$base-size: 16;
+// Breakpoints
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  // Loop through the grid breakpoints
+  @each $breakpoint, $value in $grid-breakpoints {
+    // Get the corresponding container max-width
+    $container-width: map-get($container-max-widths, $breakpoint);
+
+    @if $container-width !=null {
+      @media (min-width: $value) {
+        max-width: $container-width;
+      }
+    }
+  }
+}
+
+// Fluid container (always 100% width)
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+
+
+@each $level, $size in $h-sizes {
+
+  h#{$level},
+  .h#{$level} {
+
+    @each $bp, $fs in $size {
+      @if ($bp ==null) {
+        font-size: size($fs);
+      }
+
+      @else {
+        @include min($bp) {
+          font-size: size($fs);
+        }
+      }
+    }
+  }
+}
+
+@function f-size($target, $context: $base-font) {
+  @return ($target / $context) * 1rem;
+}

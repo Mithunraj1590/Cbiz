@@ -6,17 +6,14 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Icons from "@/styles/Icons";
 
-const MegaMenu = ({ props, scroll, mega, showActive, setOpenMegaMenu}) => {
-
-
+const MegaMenu = ({ props, scroll, mega, showActive, setOpenMegaMenu }) => {
   const [dynmaicItem, setDynmaicItem] = useState(props?.megamenu[0]);
   const [firstTitle, setFirstTitle] = useState(props?.megamenu[0]?.title);
 
-    return (
+  return (
     <div
-      className={`${Style.megamenu} ${scroll ? Style.megamenu_scrolled : ""} ${
-        mega ? Style.megamenu_scrolled : ""
-      }`}
+      className={`${Style.megamenu} ${scroll ? Style.megamenu_scrolled : ""} ${mega ? Style.megamenu_scrolled : ""
+        }`}
     >
       <div className={`${Style.megamenu_row} row flex-nowrap `}>
         <div className="col-auto">
@@ -26,16 +23,13 @@ const MegaMenu = ({ props, scroll, mega, showActive, setOpenMegaMenu}) => {
                 <Link href={item?.url} key={index} onClick={() => setOpenMegaMenu(false)}>
                   <div
                     className={`${Style.tab} 
-                    } ${
-                     
-                      showActive === true 
-                      
-                        ? Style.active
-                        : ""
-                    }
+                     ${item[0]
+                        && Style.active
+                       
+                      }
                     `}
                     onMouseEnter={() => {
-                      setDynmaicItem(item);s
+                      setDynmaicItem(item);
                     }}
                   >
                     <div className={Style.tab_label}>
@@ -67,7 +61,7 @@ const MegaMenu = ({ props, scroll, mega, showActive, setOpenMegaMenu}) => {
                 <div className={Style.result_image}>
                   <figure className="mb-0">
                     <Image
-                      src={dynmaicItem?.content?.image?.url}
+                      src={dynmaicItem?.content?.image}
                       fill
                       alt="ss"
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 30vw, 20vw"

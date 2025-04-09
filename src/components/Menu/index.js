@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useLayoutEffect, useState } from "react";
 import Link from "next/link";
-
+import { usePathname } from 'next/navigation'
 import Accordion from "react-bootstrap/Accordion";
 import Style from "./Menu.module.scss";
 import MegaMenu from "./MegaMenu";
@@ -13,7 +13,7 @@ import { useDimension } from "@/logic/useDimension";
 
 const Navmenu = [
   {
-    url:"/",
+    url:"/about-us",
     text:"About"
   },
   {
@@ -21,16 +21,34 @@ const Navmenu = [
     text:"Business Setup",
     megamenu:[
       {
+        content:{
+          title:"Minland",
+          image:"/images/minland.png",
+          description:"lorem Ipsum"
+        },
         url:"/",
-        text:"Minland",
+        title:"Minland",
+        description:"lorem Ipsum"
       },
       {
+        content:{
+          title:"Freezone",
+          image:"/images/freezone.png",
+          description:"lorem Ipsum"
+        },
         url:"/",
-        text:"Freezone",
+        title:"Freezone",
+         description:"lorem Ipsum"
       },
       {
+        content:{
+          title:"Offshore",
+          image:"/images/offshore.png",
+          description:"lorem Ipsum"
+        },
         url:"/",
-        text:"Offshore",
+        title:"Offshore",
+         description:"lorem Ipsum"
       }
     ]
   },
@@ -46,7 +64,7 @@ const Navmenu = [
 
 const Menu = ({ props, mega }) => {
   const { width } = useDimension();
-
+  
   const [headerHieght, setHeaderHieght] = useState(70);
   const [openMegaMenu, setOpenMegaMenu] = useState(false);
 
@@ -56,7 +74,8 @@ const Menu = ({ props, mega }) => {
   const [modalShow, setModalShow] = useState(false);
   const [showActive, setShowActive] = useState(false);
   const [show, setShow] = useState(false);
-
+ 
+  const pathname = usePathname()
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const accordionRef = useRef(null);
@@ -116,7 +135,7 @@ const Menu = ({ props, mega }) => {
           : mega
           ? Style.header_scrolled
           : ""
-      }`}
+      } ${pathname === "/" ? "": Style.header_scrolled}`}
       ref={headeRef}
       style={{ "--header-height": headerHieght + "px" }}
     >

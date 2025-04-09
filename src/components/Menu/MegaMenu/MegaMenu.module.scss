@@ -46,7 +46,7 @@
       max-width: calc(100% - size(45));
       p {
         font-size: size(14);
-        color: #fff;
+        color: #000;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
@@ -70,7 +70,14 @@
     }
 
     &.active {
-      background-color: #fff;
+      background-color: $third-color;
+      color: #fff;
+      .tab_text{
+        color: #fff;
+      }
+      p{
+        color: #fff;
+      }
 
       .tab_arrow {
         opacity: 1;
@@ -88,7 +95,7 @@
     margin-top: 10px;
     height: calc(100% - 10px);
     flex-direction: column;
-    background-color: #fff;
+    background-color: $third-color;
     border-radius: size(9);
     overflow: hidden;
     display: none;
@@ -99,6 +106,7 @@
     &_title {
       font-size: size(14);
       transition: 0.3s all ease-in-out;
+      color: #fff;
     }
     &_content {
       font-size: size(16);
@@ -106,6 +114,7 @@
       font-weight: 500;
       margin-top: size(12);
       transition: 0.3s all ease-in-out;
+      color: #fff;
     }
     &_image {
       margin-top: auto;

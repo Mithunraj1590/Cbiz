@@ -1,0 +1,50 @@
+@import "@/styles/mixins";
+
+.about_simplify{
+    padding:  100px 0;
+    padding-bottom: 0;
+    .head_wrap{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .title{
+            max-width: 55%;
+            @include max(1024){
+                max-width: 100%;
+                margin-bottom: 14px;
+            }
+            @include max(700){ width: 100%; max-width: 100%;} 
+        }
+        p{
+         max-width: 503px;
+         @include max(1024){
+            max-width: 100%
+         }
+        
+        }
+    }
+    .about_simplify_img{
+        @include aspectRatio(1280 , 629);
+        margin-top: 60px;
+        border-radius: 20px;
+        overflow: hidden;
+        @include max(1024){
+            margin-top: 40px;
+        }
+        @include max(600){
+            margin-top: 30px;
+            border-radius: 10px;
+        }
+    }
+}
+
+
+.fontsize50{
+    font-size: 50px;
+}
+
+.title_row_02{ 
+    @include max(700){
+    width: 100%; padding-bottom: 15px;
+}
+}
